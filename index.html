@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.7">
+    <title>KemByt</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="icon" href="img/favicon.png">
+    
+    <link rel="stylesheet" href="media-content.css">
+    
+    <!--Pre Loader-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
+
+    <script type="text/javascript">$(window).on('load', function () {
+    var $preloader = $('#p_prldr'),
+        $svg_anm   = $preloader.find('.svg_anm');
+    $svg_anm.fadeOut();
+    $preloader.delay(500).fadeOut('slow');
+});</script>
+    
+    
+    
+    <style>
+        .link{
+            font-size: 24px;
+            text-decoration: none;
+            margin-top: 100px; 
+            padding: 20px 60px 20px 60px;
+            color: white;
+            background-color: #17cc00;
+            transition: all .3s ease-out;
+            
+        }
+        .link:hover{
+            background-color: #483935;
+            
+        }
+        
+        
+        
+        
+        
+    </style>
+    
+</head>
+<body>
+  
+  <!--Pre Loader-->
+  <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span><br>Подождите<br><small>идет загрузка</small></div></div>
+
+  
+  
+  
+  
+   
+    <div class="header">
+       
+       
+        <div class="title-menu">
+            <a href="index.html">Главная</a>
+            <a href="pretest.html">Пройти тест</a>
+            <a href="about.html">О нас</a>
+            <a href="feedback.html">Обратная связь</a>
+        </div>
+         
+        <div class="main">
+            <div class="title-logo">
+                <img class="title-img" src="img/logo.png" width=261px height=173px>
+                <h1 class="title">KemByt</h1>
+            </div>
+            <div class="links">
+                <a class="link" href="pretest.html" class="go_to_test">Пройти тест</a><br><br>
+                <a class="results" href="results.html" style="text-decoration: underline;">Я уже знаю результаты</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.7">
+
+    <title>Результаты</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    
+    
+    
+    <style>
+        .res{
+            position: relative;
+            margin: 7px;
+            width: 100%;
+            height: 70px;
+            background-color: #eaeaea;
+            color: black;
+            font-family: 'Roboto', sans-serif;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 5px 5px 7px 1px #656565;
+        }
+        .info-text{
+            margin: auto;
+        }
+        .info-text h3{
+            font-size: 22px;
+            margin: 15px;
+        }
+        .info-text p{
+            text-indent: 15px;
+            font-family: 'Roboto', sans-serif; 
+            margin: 10px;
+            font-size: 20px;
+
+        }
+        .info{
+            border-radius: 7px;
+            font-family: 'Roboto', sans-serif; 
+            height: auto;
+            width: 60%;
+            position: relative;
+            margin: 10% 20% 10% 20%;
+            padding: 20px;    
+            background-color: #fafafa;
+            box-shadow: 5px 5px 7px 1px;
+            z-index: 1;
+        }
+        
+        .default-info h2{
+            position: sticky;
+            top: 60px;
+            background-color: #eaeaea;
+            padding: 5px;
+            margin: 20px 0 0 0;
+            text-align: center;
+            border-radius: 0 0 25px 25px;
+            opacity: .5;
+        }
+        .default-info h2:hover{
+            opacity: 1;
+        }
+        .result-title{
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+        b{
+            padding-left: 10px;
+        }
+        
+        .result {
+            width: auto;
+        }
+        .result a{
+            width: auto;
+            color: black;
+            text-decoration: underline;
+        }
+        .result a:hover{
+            text-decoration: none;
+        }
+        .default-info a{
+            color: #840000;
+        }
+        .default-info a:hover{
+            color: black;
+        }
+        
+        .sel-napr{
+            display: none;
+            
+        }
+        li {
+            padding: 5px 0 5px 15px;
+            list-style-type: none; 
+        }
+        ul {
+            margin-left: 0; 
+            padding-left: 0; 
+        }
+        select{
+            outline: none;
+            display: block;
+            width: 100%; 
+            padding: .75rem 2.5rem .75rem 1rem;
+            background: none; 
+            border: 1px solid #ccc; 
+            border-radius: 25px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            font-family: inherit;
+            font-size: 1rem;
+            color: #444;
+        }
+        .default-info, .napr{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+  
+    <div class="background">
+                
+
+        <!-- #top menu# -->
+        <div class="title-menu">
+            <a href="index.html">Главная</a>
+            <a href="pretest.html">Пройти тест</a>
+            <a href="about.html">О нас</a>
+            <a href="feedback.html">Обратная связь</a>
+        </div>
+        
+        <div class="info">
+            <div class="info-text">
+                <h3>Тест Голланда. Методика профессионального самоопределения.</h3>
+                <p>Выберите свой тип личности, а мы подберем направления и профессии для вас</p>
+                <select name="type" id="selectType" onchange="selectType()">
+                    <option value="def">-- Выберите свой тип --</option>
+                    <option value="rt">Реалистический тип</option>
+                    <option value="it">Интеллектуальный тип</option>
+                    <option value="st">Социальный тип</option>
+                    <option value="kt">Конвенциальный тип</option>
+                    <option value="pt">Предприимчивый тип</option>
+                    <option value="at">Артистичный тип</option>
+                </select>
+                
+                <div class="default-info" id="default">
+                         <div class="napr" id="rtID">
+                         <h2>Реалистический тип</h2>
+                         <p class="result-info" id="_realType">
+                             <b>Психологические характеристики, особенности личности, способности:</b> Активность, агрессивность, деловитость, настойчивость, рациональность, практическое мышление, хорошие двигательные навыки, пространственное воображение, технические способности.<br>
+                             <b>Ориентация, направленность, предпочтения:</b> Конкретный результат, настоящее, вещи, предметы и их практическое использование, занятия, требующие физического развития, ловкости, отсутствие ориентации на общение. <br>
+                             <b>Профессиональная среда:</b> Техника, сельское хозяйство, военное дело. Решение конкретных задач, требующих подвижности, двигательных умений, физической силы. Социальные навыки нужны в минимальной мере и связаны с приемом-передачей ограниченной информации. <br>
+                             <b>Примеры профессий:</b> Механик, электрик, инженер, фермер, зоотехник, геолог, гравер, агроном, садовод, автослесарь, шофер, пилот, полицейский, охранник (телохранитель), сварщик, стоматолог. <br>
+                             <b>Типичные увлечения:</b> Реставрация старых механизмов. Ремонт, конструирование, сборка различных устройств. Строительные и восстановительные работы. Фермерство, обустройство дачи, загородного дома. Огородничество, садоводство, охота, рыболовство, туризм, физически опасные виды спорта. <br>
+                             
+                             
+                        </p>
+                        <p><b>Вам может подойти:</b></p>
+                        <select name="" id="select_rt" onchange="select_rt()">
+                            <option value="def">-- Выберите направление --</option>
+                            <option value="VUZ">Высшее образование</option>
+                            <option value="SPO">СПО</option>
+                        </select><br>
+                        
+                        <div>
+                            <div class="sel-napr" id="VUZ_rt">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/departments/89">Институт энергетики и жилищно-коммунального хозяйства</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/104">Институт «Цифровая экономика»</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/12">Машиностроительный факультет</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/60">Приборостроительный факультет</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/76">Факультет «Математика и естественные науки»</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/13">Институт «Современные технологии машиностроения, автомобилестроения и металлургии»</a></li>
+                                </ul></div>
+                                <div><ul>УдГУ
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53851">Институт искусств и дизайна УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53838">Институт математики, информационных технологий и физики УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53839">Институт нефти и газа им. М.С. Гуцериева УдГУ</a></li>
+                                </ul></div>
+                                <div><ul>ИГМА
+                                    <li><a href="https://www.igma.ru/component/content/article/698-abitur?catid=76&Itemid=108">Ижевская государственная медицинская академия</a></li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="sel-napr" id="SPO_rt">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/programs/70">Монтаж и техническая эксплуатация промышленного оборудования</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/14">Банковское дело</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/35">Пожарная безопасность</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/134">Дизайн</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/65">Эксплуатация беспилотных авиационных систем</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/117">Коммерция</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/21">Монтаж и эксплуатация оборудования и систем газоснабжения</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/165">Монтаж, техническое обслуживание и ремонт биотехнических и медицинских аппаратов и систем</a></li>
+                                </ul>
+                                </div>
+                                
+                                <div><ul>УдГУ
+                                    <li><a href="https://udsu.ru/admissions/2021/srednee-professionalnoe-obrazovanie">УдГУ СПО</a></li>
+                                </ul>                                   
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="napr" id="itID">
+                        <h2>Интеллектуальный тип</h2>
+                         <p class="result-info" id="_intType">
+                                <b>Психологические характеристики, особенности личности, способности:</b> Аналитический ум, независимость и оригинальность суждений, гармоничное развитие языковых и математических способностей, критичность, любознательность, склонность к фантазии, интенсивная внутренняя жизнь, низкая физическая активность. <br>
+
+                                <b>Ориентация, направленность, предпочтения:</b> Идеи, теоретические ценности, умственный труд, решение интеллектуальных творческих задач, требующих абстрактного мышления, отсутствие ориентации на общение в деятельности, информационный характер общения. <br>
+
+                                <b>Профессиональная среда:</b> Наука. Решение задач, требующих абстрактного мышления и творческих способностей. Межличностные отношения играют незначительную роль, хотя необходимо уметь передавать и воспринимать сложные идеи. <br>
+
+                                <b>Примеры профессий:</b> Физик, астроном, лингвист, программист, микробиолог, архитектор, экономист (аудитор, аналитик), фармацевт, искусствовед, историк, этнограф, археолог. <br>
+                                
+                                <b>Типичные увлечения:</b> Работа (исследовательский тип часто полностью поглощен своей работой). Сложные виды деятельности (яхтенный спорт, подводное плавание, альпинизм) Компьютеры, программирование, чтение (художественная литература, научные статьи). <br>
+                                </p>
+                                
+                        <p><b>Вам может подойти:</b></p>
+                        <select name="" id="select_it" onchange="select_it()">
+                            <option value="def">-- Выберите направление --</option>
+                            <option value="VUZ">Высшее образование</option>
+                            <option value="SPO">СПО</option>
+                        </select><br>
+                        <div>
+                            <div class="sel-napr" id="VUZ_it">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/departments/60">Приборостроительный факультет</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/76">Факультет «Математика и естественные науки»</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/102">Институт образовательных технологий</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/13">Институт «Современные технологии машиностроения, автомобилестроения и металлургии»</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/89">Институт энергетики и жилищно-коммунального хозяйства</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/104">Институт «Цифровая экономика»</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/12">Машиностроительный факультет</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/68">Институт строительства и архитектуры имени В. А. Шумилова</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/95">Институт международных образовательных программ</a></li>
+                                </ul></div>
+                                <div><ul>УдГУ
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53835">Институт естественных наук УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53837">Институт истории и социологии УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53838">Институт математики, информационных технологий и физики УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53839">Институт нефти и газа им. М.С. Гуцериева УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53844">Институт педагогики, психологии и социальных технологий УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53853">Институт права, социального управления и безопасности УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53841">Институт удмуртской филологии, финно-угроведения и журналистики УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53840">Институт физической культуры и спорта УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53854">Институт экономики и управления УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53850">Институт языка и литературы УдГУ</a></li>
+                                </ul></div>
+                                <div><ul>ИГМА
+                                    <li><a href="https://www.igma.ru/component/content/article/698-abitur?catid=76&Itemid=108">Ижевская государственная медицинская академия</a></li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="sel-napr" id="SPO_it">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/programs/70">Монтаж и техническая эксплуатация промышленного оборудования</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/8">Прикладная информатика</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/14">Банковское дело</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/99">Программирование в компьютерных системах</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/87">Право и организация социального обеспечения</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/65">Эксплуатация беспилотных авиационных систем</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/117">Коммерция</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/21">Монтаж и эксплуатация оборудования и систем газоснабжения</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/165">Монтаж, техническое обслуживание и ремонт биотехнических и медицинских аппаратов и систем</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/173">Операционная деятельность в логистике</a></li>
+                                </ul>
+                                </div>
+                                
+                                <div><ul>УдГУ
+                                    <li><a href="https://udsu.ru/admissions/2021/srednee-professionalnoe-obrazovanie">УдГУ СПО</a></li>
+                                </ul>                                   
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="napr" id="stID">
+                         <h2>Социальный тип</h2>
+                         <p class="result-info" id="_socType">
+                             <b>Психологические характеристики, особенности личности, способности:</b> Умение общаться, гуманность, способность к сопереживанию, активность, зависимость от окружающих и общественного мнения, приспособление, решение проблем с опорой на эмоции и чувства, преобладание языковых способностей. <br>
+
+                             <b>Ориентация, направленность, предпочтения:</b> Люди, общение, установление контактов с окружающими, стремление учить, воспитывать, избегание интеллектуальных проблем. <br>
+
+                             <b>Профессиональная среда:</b> Образование, здравоохранение, социальное обеспечение, обслуживание, спорт. Ситуации и проблемы, связанные с умением разбираться в поведении людей, требующие постоянного личного общения, умения убеждать. <br>
+
+                             <b>Примеры профессий:</b> Врач, педагог, психолог, экскурсовод, журналист, менеджер по продажам, ди-джей, телеведущий. <br>
+
+                             <b>Типичные увлечения:</b> Организация развлечения других. Посещение общественных мероприятий, собраний. Добровольное выполнение благотворительной и социальной работы. <br>
+                         </p>
+                         <p><b>Вам может подойти:</b></p>
+                        <select name="" id="select_st" onchange="select_st()">
+                            <option value="def">-- Выберите направление --</option>
+                            <option value="VUZ">Высшее образование</option>
+                            <option value="SPO">СПО</option>
+                        </select><br>
+                        
+                        <div>
+                            <div class="sel-napr" id="VUZ_st">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/departments/420">Институт физической культуры и спорта имени А.И. Тихонова четырехкратного олимпийского чемпиона</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/102">Институт образовательных технологий</a></li>
+                                    
+                                </ul></div>
+                                <div><ul>УдГУ
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53849">Институт гражданской защиты УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53851">Институт искусств и дизайна УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53844">Институт педагогики, психологии и социальных технологий УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53853">Институт права, социального управления и безопасности УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53853">Институт социальных коммуникаций УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53841">Институт удмуртской филологии, финно-угроведения и журналистики УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53840">Институт физической культуры и спорта УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53854">Институт экономики и управления УдГУ</a></li>
+                                </ul></div>
+                                <div><ul>ИГМА
+                                    <li><a href="https://www.igma.ru/component/content/article/698-abitur?catid=76&Itemid=108">Ижевская государственная медицинская академия</a></li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="sel-napr" id="SPO_st">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/programs/14">Банковское дело</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/86">Экономика и бухгалтерский учет</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/87">Право и организация социального обеспечения</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/117">Коммерция</a></li>
+                                </ul>
+                                </div>
+                                
+                                <div><ul>УдГУ
+                                    <li><a href="https://udsu.ru/admissions/2021/srednee-professionalnoe-obrazovanie">УдГУ СПО</a></li>
+                                </ul>                                   
+                                </div>
+                            </div>
+                        </div>
+                         </div>
+                         <div class="napr"  id="ktID">
+                         <h2>Конвенциальный тип</h2>
+                         <p class="result-info" id="_konType">
+                             <b>Личностные характеристики, способности:</b> Способности к переработке числовой информации, стереотипный подход к проблемам, консервативный характер, подчиняемость, зависимость, следование обычаям, конформность, исполнительность, преобладание математических способностей. <br>
+
+                             <b>Ориентация, направленность, предпочтения:</b> Порядок, четко расписанная деятельность, работа по инструкции, заданным алгоритмам, избегание неопределенных ситуаций, социальной активности и физического напряжения, принятие позиции руководства. <br>
+
+                             <b>Профессиональная среда:</b> Экономика, связь, расчеты, бухгалтерия, делопроизводство, требующие способностей к обработке рутинной информации и числовых данных. <br>
+
+                             <b>Примеры профессий:</b> бухгалтер, финансист, экономист, канцелярский служащий, библиотекарь, контролер, химик-технолог, чертежник, корректор, логист, товаровед. <br>
+
+                             <b>Типичные увлечения:</b> Коллекционирование марок, монет. Настройка моделей. Проекты улучшения жилища. Участие в гражданских и общественных организациях. Игры с ясными и четкими правилами. <br>
+                         </p>
+                         <p><b>Вам может подойти:</b></p>
+                        <select name="" id="select_kt" onchange="select_kt()">
+                            <option value="def">-- Выберите направление --</option>
+                            <option value="VUZ">Высшее образование</option>
+                            <option value="SPO">СПО</option>
+                        </select><br>
+                        
+                        <div>
+                            <div class="sel-napr" id="VUZ_kt">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/departments/95">Институт международных образовательных программ</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/4">Институт «Информатика и вычислительная техника»</a></li>
+                                    
+                                </ul></div>
+                                <div><ul>УдГУ
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53835">Институт естественных наук УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53851">Институт искусств и дизайна УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53838">Институт математики, информационных технологий и физики УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53839">Институт нефти и газа им. М.С. Гуцериева УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53841">Институт удмуртской филологии, финно-угроведения и журналистики УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53850">Институт языка и литературы УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53854">Институт экономики и управления УдГУ</a></li>
+                                </ul></div>
+                                <div><ul>ИГМА
+                                    <li><a href="https://www.igma.ru/component/content/article/698-abitur?catid=76&Itemid=108">Ижевская государственная медицинская академия</a></li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="sel-napr" id="SPO_kt">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/programs/8">Прикладная информатика</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/99">Программирование в компьютерных системах</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/86">Экономика и бухгалтерский учет</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/35">Пожарная безопасность</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/134">Дизайн</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/65">Эксплуатация беспилотных авиационных систем</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/117">Коммерция</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/21">Монтаж и эксплуатация оборудования и систем газоснабжения</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/165">Монтаж, техническое обслуживание и ремонт биотехнических и медицинских аппаратов и систем</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/173">Операционная деятельность в логистике</a></li>
+                                </ul>
+                                </div>
+                                
+                                <div><ul>УдГУ
+                                    <li><a href="https://udsu.ru/admissions/2021/srednee-professionalnoe-obrazovanie">УдГУ СПО</a></li>
+                                </ul>                                   
+                                </div>
+                            </div>
+                        </div>
+                         </div>
+                         <div class="napr" id="ptID">
+                         <h2>Предприимчивый тип</h2>
+                         <p class="result-info" id="_predType">
+                             <b>Личностные характеристики, способности:</b> Энергия, импульсивность, энтузиазм, предприимчивость, агрессивность, готовность к риску, оптимизм, уверенность в себе, преобладание языковых способностей, хорошие организаторские качества. <br>
+
+                             <b>Ориентация, направленность, предпочтения:</b> Лидерство, признание, руководство, власть, личный статус, избегание занятий, требующих усидчивости, большого труда, двигательных навыков и концентрации внимания, интерес к экономике и политике. <br>
+
+                             <b>Профессиональная среда:</b> Решение неясных задач, общение с представителями различных типов в разнообразных ситуациях, требующее умения разбираться в мотивах поведения других людей и красноречия. <br>
+
+                             <b>Примеры профессий:</b> Бизнесмен, маркетолог, менеджер, директор, заведующий, журналист, репортер, дипломат, юрист, политик, менеджер по продажам, биржевой брокер. <br>
+
+                             <b>Типичные увлечения:</b> Членство в клубах, организациях, партиях. Посещение собраний, конференций. Спортивные состязания в качестве зрителя или участника. Престижный отдых, развлечения. Организация вечеринок, увеселений. Политическая деятельность. <br>
+                         </p>
+                         <p><b>Вам может подойти:</b></p>
+                        <select name="" id="select_pt" onchange="select_pt()">
+                            <option value="def">-- Выберите направление --</option>
+                            <option value="VUZ">Высшее образование</option>
+                            <option value="SPO">СПО</option>
+                        </select><br>
+                        
+                        <div>
+                            <div class="sel-napr" id="VUZ_pt">
+                                
+                                <div><ul>УдГУ
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53851">Институт искусств и дизайна УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53854">Институт экономики и управления УдГУ</a></li>
+                                </ul></div>                                
+                            </div>
+                            
+                            <div class="sel-napr" id="SPO_pt">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/programs/14">Банковское дело</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/86">Экономика и бухгалтерский учет</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/134">Дизайн</a></li>
+                                    <li><a href="https://istu.ru/abiturients/programs/117">Коммерция</a></li>
+                                </ul>
+                                </div>
+                                
+                                <div><ul>УдГУ
+                                    <li><a href="https://udsu.ru/admissions/2021/srednee-professionalnoe-obrazovanie">УдГУ СПО</a></li>
+                                </ul>                                   
+                                </div>
+                            </div>
+                        </div>
+                         </div>
+                         <div class="napr" id="atID">
+                         <h2>Артистичный тип</h2>
+                         <p class="result-info" id="_artType">
+                             <b>Психологические характеристики, особенности личности, способности:</b> Воображение и интуиция, эмоционально сложный взгляд на жизнь, независимость, гибкость и оригинальность мышления, хорошие двигательные способности и восприятие. <br>
+
+                             <b>Ориентация, направленность, предпочтения:</b> Эмоции и чувства, самовыражение, творческие занятия, избегание деятельности, требующей физической силы, регламентированного рабочего времени, следования правилам и традициям. <br>
+
+                             <b>Профессиональная среда:</b> Изобразительное искусство, музыка, литература. Решение проблем, требующих художественного вкуса и воображения. <br>
+
+                             <b>Примеры профессий:</b> Музыкант, художник, визажист, фотограф, актер, режиссер, дизайнер. <br>
+
+                             <b>Типичные увлечения:</b> Фотография. Рисование. Живопись. Посещение танцевальных и музыкальных концертов, театров, музеев. Сочинение поэм, рассказов. Художественное коллекционирование. Игра на музыкальных инструментах. Занятие танцами, пением. <br>
+                         </p>
+                         <p><b>Вам может подойти:</b></p>
+                        <select name="" id="select_at" onchange="select_at()">
+                            <option value="def">-- Выберите направление --</option>
+                            <option value="VUZ">Высшее образование</option>
+                            <option value="SPO">СПО</option>
+                        </select><br>
+                        
+                        <div>
+                            <div class="sel-napr" id="VUZ_at">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/departments/68">Институт строительства и архитектуры имени В. А. Шумилова</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/420">Институт физической культуры и спорта имени А.И. Тихонова четырехкратного олимпийского чемпиона</a></li>
+                                    <li><a href="https://istu.ru/abiturients/departments/102">Институт образовательных технологий</a></li>
+                                    
+                                </ul></div>
+                                <div><ul>УдГУ
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53851">Институт искусств и дизайна УдГУ</a></li>
+                                    <li><a href="https://izhevsk.ucheba.ru/uz/53844">Институт педагогики, психологии и социальных технологий УдГУ</a></li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="sel-napr" id="SPO_at">
+                                
+                                <div><ul>ИжГТУ
+                                    <li><a href="https://istu.ru/abiturients/programs/134">Дизайн</a></li>
+                                </ul>
+                                </div>
+                                
+                                <div><ul>УдГУ
+                                    <li><a href="https://udsu.ru/admissions/2021/srednee-professionalnoe-obrazovanie">УдГУ СПО</a></li>
+                                </ul>                                   
+                                </div>
+                            </div>
+                        </div>
+                         </div>
+                     </div>       
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    <script type="text/javascript" src="select_type.js"> </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,69 @@
+ @media (max-width: 480px){
+     .info{
+         margin: 15% 20% 10% 20%;
+     }
+     
+     .test{
+        margin: 10% 20% 10% 20%;
+        height: auto;
+        width: 90%;
+        position: fixed;
+        padding: 20px;    
+        background-color: #fafafa;
+        box-shadow: 0 0 7px 0 ;
+        z-index: 1;
+        border-radius: 7px 
+     }
+    .variant{
+        outline: none;
+        position: fixed;
+        padding: 10px;
+        width: 100%;
+        height: 70px;
+        background-color: #eaeaea;
+        font-size: 20px;
+        color: black; 
+        border: none;
+        border-radius: 3px;
+        box-shadow: 5px 5px 7px 1px #656565;
+        transition: all .3s ease-out;
+     }
+    .variant:hover{
+        transform: scale(1.02);
+        z-index: 0;
+     }
+}
+        
+
+
+#p_prldr{
+position: fixed;
+left: 0;
+top: 0;
+right:0;
+bottom:0;
+background: #656565;
+z-index: 30;}
+ 
+.contpre small{font-size:25px;}
+ 
+.contpre{
+width: 250px;
+height: 100px;
+position: absolute;
+left: 50%;top: 48%;
+margin-left:-125px;
+margin-top:-75px;
+color:#fff;
+font-size:40px;
+letter-spacing:-2px;
+text-align:center;
+line-height:35px;}
+ 
+#p_prldr .svg_anm {
+position: absolute;
+width: 41px;
+height: 41px;
+background: url(src/preload.svg) center center no-repeat;
+background-size:41px;    
+margin: -16px 0 0 -16px;}
