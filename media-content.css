@@ -42,7 +42,7 @@ left: 0;
 top: 0;
 right:0;
 bottom:0;
-background: rgb(104 81 75 / 90%);
+background:rgba(104, 81, 75, 0.9);
 z-index: 30;}
  
 .contpre small{font-size:25px;}
